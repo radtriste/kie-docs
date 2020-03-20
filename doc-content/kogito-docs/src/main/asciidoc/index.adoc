@@ -41,6 +41,8 @@ include::chap_kogito-deploying-on-openshift.adoc[leveloffset=+1]
 //Developing decision services
 include::chap_kogito-developing-decision-services.adoc[leveloffset=+1]
 
+//Developing process services
+include::chap_kogito-developing-process-services.adoc[leveloffset=+1]
 
 [discrete]
 = {PRODUCT} Release Notes
