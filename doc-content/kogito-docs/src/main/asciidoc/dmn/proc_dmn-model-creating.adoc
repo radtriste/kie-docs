@@ -21,7 +21,7 @@ endif::[]
 --
 If the DRD does not open in the {PRODUCT} DMN designer, ensure that you have installed and enabled the {PRODUCT} https://github.com/kiegroup/kogito-tooling/releases[VSCode extension].
 
-If the {PRODUCT} DMN designer opens only the XML source of the DMN file and displays an error message, review the reported errors and the DMN model file to ensure all DMN elements are correctly defined.
+If the {PRODUCT} DMN designer opens only the XML source of the DMN file and displays an error message, review the reported errors and the DMN model file to ensure that all DMN elements are correctly defined.
 --
 . Begin adding components to your new or imported DRD by clicking and dragging one of the DMN nodes from the left toolbar:
 +

@@ -58,7 +58,7 @@ rule isAdult
 end
 ----
 --
-. In the `src/main/resources/org/acme/kogito` folder, use a BPMN 2.0 process modeler to open the `PersonProcess.bpmn2` process diagram that you created.
+. In the `src/main/resources/org/acme/kogito` folder, use the {PRODUCT} BPMN designer in VSCode to open the `PersonProcess.bpmn2` process diagram that you created.
 . Select the `Evaluate person` business rule task and for the *Implementation/Execution* property, set the rule language to `DRL` (instead of `DMN`) and the rule flow group to `unit:org.acme.kogito.PersonRules`.
 +
 This rule unit syntax in the *Rule Flow Group* field specifies that you are using the `org.acme.kogito.PersonRules` rule unit instead of a traditional rule flow group. This is the rule unit that you referenced in the example DRL file. When you build the project, the business process implicitly declares the rule unit as part of the business rule task to execute the DRL file.

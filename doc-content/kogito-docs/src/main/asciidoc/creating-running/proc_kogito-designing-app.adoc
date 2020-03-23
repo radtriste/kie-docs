@@ -2,13 +2,13 @@
 
 = Designing the application logic for a {PRODUCT} service using DMN and BPMN
 
-After you create your {PRODUCT} project, you can create or import Business Process Model and Notation (BPMN) business processes, Decision Model and Notation (DMN) decision models, Drools Rule Language (DRL) business rules, XLS or XLSX decision tables, Java services, and other assets in the `src/main/resources` folder of your project.
+After you create your {PRODUCT} project, you can create or import Business Process Model and Notation (BPMN) 2.0 business processes, Decision Model and Notation (DMN) decision models, Drools Rule Language (DRL) business rules, XLS or XLSX decision tables, Java services, and other assets in the `src/main/resources` folder of your project.
 
-The example for this procedure is a basic {PRODUCT} service that offers one REST endpoint: `/persons`. This endpoint is automatically generated based on an example `PersonProcess.bpmn2` business process that employs an example `PersonDecisions.dmn` DMN model to make decisions based on the data being processed.
+The example for this procedure is a basic {PRODUCT} service that provides a REST endpoint `/persons`. This endpoint is automatically generated based on an example `PersonProcess.bpmn2` business process that employs an example `PersonDecisions.dmn` DMN model to make decisions based on the data being processed.
 
-The business process contains the business logic of a {PRODUCT} service. The process provides the complete set of steps to achieve the business goal. The process is also the entry point to the service that can be consumed by other services.
+The business process contains the business logic of the {PRODUCT} service. The process provides the complete set of steps to achieve the business goal. The process is also the entry point to the service that can be consumed by other services.
 
-The business rule enables you to define decision logic in reusable pieces that can be used in a declarative way. You can define business rules and decisions in several ways, such as with DMN models, DRL rules, or XLS or XLSX decision tables. The example for this procedure uses a DMN model.
+The business decision contains the decision logic of the {PRODUCT} service. In this example, the decision logic is invoked as part of the business process. You can define business rules and decisions in several ways, such as with DMN models, DRL rules, or XLS or XLSX decision tables. The example for this procedure uses a DMN model.
 
 .Procedure
 . In the Maven project that you generated for your {PRODUCT} service, create a `src/main/java/org/acme/kogito/model` folder and add the following `Person.java` object inside the new folder:
@@ -170,8 +170,8 @@ To create this example DMN model quickly, you can copy the following `PersonDeci
 
 To create this example DMN model in VSCode using the {PRODUCT} DMN designer, follow these steps:
 
-.. In the left toolbar, select *DMN Input Data*, drag the node to the canvas, and double-click the node to name it `Person`.
-.. In the left toolbar, select *DMN decision*, drag the node to the canvas, double-click the node to name it `Is Adult`, and link to it from the input node.
+.. In the left palette, select *DMN Input Data*, drag the node to the canvas, and double-click the node to name it `Person`.
+.. In the left palette, select *DMN decision*, drag the node to the canvas, double-click the node to name it `Is Adult`, and link to it from the input node.
 .. Select the decision node to display the node options and click the *Edit* icon to open the DMN boxed expression designer to define the decision logic for the node.
 .. Click the undefined expression field and select *Decision Table*.
 .. Click the upper-left corner of the decision table to set the hit policy to *Unique*.
@@ -185,7 +185,7 @@ image::kogito/creating-running/kogito-dmn-example-person-logic.png[Image of pers
 image::kogito/creating-running/kogito-dmn-example-person-data-types.png[Image of person DMN data types]
 .. Save the DMN decision file.
 --
-. In the `src/main/resources/org/acme/kogito` folder, use a BPMN 2.0 process modeler to create the following `PersonProcess.bpmn2` process:
+. In the `src/main/resources/org/acme/kogito` folder, add the following `PersonProcess.bpmn2` process model:
 +
 --
 .Example person BPMN process
@@ -199,7 +199,7 @@ This example process consists of the following basic BPMN components:
 * User task
 * End events
 
-In VSCode (recommended), you can add the {PRODUCT} https://github.com/kiegroup/kogito-tooling/releases[VSCode extension] to model the business process with the {PRODUCT} process designer.
+In VSCode (recommended), you can add the {PRODUCT} https://github.com/kiegroup/kogito-tooling/releases[VSCode extension] to model the business process with the {PRODUCT} BPMN designer.
 
 To create this example process quickly, you can copy the following `PersonProcess.bpmn2` file content:
 
@@ -483,10 +483,10 @@ To create this example process quickly, you can copy the following `PersonProces
 </bpmn2:definitions>
 ----
 
-To create this example BPMN process in VSCode using the {PRODUCT} process designer, follow these steps:
+To create this example BPMN process in VSCode using the {PRODUCT} BPMN designer, follow these steps:
 
-.. In the upper-right corner of the process designer, click the *Properties* icon and under *Process Data*, add a process variable with the name `person` and the type `org.acme.kogito.model.Person`.
-.. In the left toolbar, select *Activities* -> *Business Rule*, drag the task to the canvas, and link to it from the start event.
+.. In the upper-right corner of the BPMN designer, click the *Properties* icon and under *Process Data*, add a process variable with the name `person` and the type `org.acme.kogito.model.Person`.
+.. In the left palette, select *Activities* -> *Business Rule*, drag the task to the canvas, and link to it from the start event.
 .. Select the business rule task and define the following properties:
 
 * *General*: Name the rule task `Evaluate person`.
@@ -495,13 +495,13 @@ To create this example BPMN process in VSCode using the {PRODUCT} process design
 ** *Namespace*: `\https://kiegroup.org/dmn/_52CEF9FD-9943-4A89-96D5-6F66810CA4C1`
 ** *Decision Name*: `Is Adult`
 ** *DMN Model Name*: `PersonDecisions`
-* *Data Assignments*: Add a data input and a data output, both with the name `person`, with the type `org.acme.kogito.model.Person`, and with the source and target `person`.
-.. In the left toolbar, select *Gateways* -> *Exclusive*, drag the gateway to the canvas, and link to it from the rule task.
-.. In the left toolbar, select *Activities* -> *User*, drag the user task to the canvas, and link to it from the gateway.
+* *Data Assignments*: Add a data input and a data output, both with the name `person`, with the type `org.acme.kogito.model.Person`, and with the source or target `person`.
+.. In the left palette, select *Gateways* -> *Exclusive*, drag the gateway to the canvas, and link to it from the rule task.
+.. In the left palette, select *Activities* -> *User*, drag the user task to the canvas, and link to it from the gateway.
 .. Select the user task and define the following properties:
 
 * *General*: Name the user task `Special handling for children`.
 * *Implementation/Execution*: Set the task name to `ChildrenHandling`, and add a data input with the name `person`, the type `org.acme.kogito.model.Person`, and the source `person`.
-.. In the left toolbar, select *End Events* -> *End*, drag two end events to the canvas, and link to one end event from the user task and to the other end event from the gateway.
+.. In the left palette, select *End Events* -> *End*, drag two end events to the canvas, and link to one end event from the user task and to the other end event from the gateway.
 .. Save the BPMN process file.
 --

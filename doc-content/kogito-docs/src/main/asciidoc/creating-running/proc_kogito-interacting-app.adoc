@@ -1,12 +1,12 @@
-[id='proc_kogito-testing-app']
+[id='proc_kogito-interacting-app']
 
-= Testing a {PRODUCT} service
+= Interacting with a running {PRODUCT} service
 
-After your {PRODUCT} service is running, you can test the service by sending REST API requests to execute your services according to how you set up the application.
+After your {PRODUCT} service is running, you can send REST API requests to interact with your application and execute your services according to how you set up the application.
 
 This example tests the `/persons` REST API endpoint that is automatically generated based on the `PersonProcess.bpmn2` business process, according to the decisions in the `PersonDecisions.dmn` file (or the rules in the `PersonRules.drl` file if you used a DRL rule unit).
 
-For this example, can use a REST client or curl utility to send requests with the following components:
+For this example, you can use a REST client or curl utility to send requests with the following components:
 
 * *URL*: `\http://localhost:8080/persons`
 * *HTTP headers*:
@@ -14,7 +14,7 @@ For this example, can use a REST client or curl utility to send requests with th
 ** `content-type`: `application/json`
 * *HTTP methods*: `GET`, `POST`, `PUT`, or `DELETE`
 
-.Example POST request body to add an adult
+.Example POST request body to add an adult (JSON)
 [source,json]
 ----
 {
@@ -31,7 +31,7 @@ For this example, can use a REST client or curl utility to send requests with th
 curl -X POST http://localhost:8080/persons -H 'content-type: application/json' -H 'accept: application/json' -d '{"person": {"name":"John Quark", "age": 20}}'
 ----
 
-.Example response
+.Example response (JSON)
 [source,json]
 ----
 {
@@ -47,9 +47,9 @@ curl -X POST http://localhost:8080/persons -H 'content-type: application/json' -
 This example procedure uses curl commands for convenience.
 
 .Procedure
-In a command terminal window that is separate from your running application, navigate to the project with your {PRODUCT} service and use any of the following curl commands with JSON requests to interact with your running service:
+In a command terminal window that is separate from your running application, navigate to the project that contains your {PRODUCT} service and use any of the following curl commands with JSON requests to interact with your running service:
 
-NOTE: On Spring Boot, you might need to modify how your application exposes API endpoints in order for these example requests to function. For more information, see the README file included in the example Spring Boot project that you created.
+NOTE: On Spring Boot, you might need to modify how your application exposes API endpoints in order for these example requests to function. For more information, see the README file included in the example Spring Boot project that you created for this tutorial.
 
 * Add an adult person:
 +
