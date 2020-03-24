@@ -16,18 +16,18 @@ endif::[]
 
 .Procedure
 . Download the latest version of the https://github.com/kiegroup/kogito-cloud-operator/releases[{PRODUCT} CLI distribution] from GitHub.
-. Extract the `{PRODUCT_INIT}-RELEASE` binary file:
+. Extract the `{PRODUCT_INIT}-_RELEASE_` binary file:
 +
 --
-* On Linux: In a command terminal, navigate to the directory where you downloaded the `{PRODUCT_INIT}-RELEASE` binary file and run the following command to extract the contents:
+* On Linux: In a command terminal, navigate to the directory where you downloaded the `{PRODUCT_INIT}-_RELEASE_` binary file and run the following command to extract the contents:
 +
 .Extract the {PRODUCT} CLI distribution
-[source]
+[source,subs="+quotes"]
 ----
-tar -xvf kogito-RELEASE.tar.gz
+tar -xvf kogito-_RELEASE_.tar.gz
 ----
 
-* On Windows: In your file browser, navigate to the directory where you downloaded the `{PRODUCT_INIT}-RELEASE` binary file and extract the ZIP file.
+* On Windows: In your file browser, navigate to the directory where you downloaded the `{PRODUCT_INIT}-_RELEASE_` binary file and extract the ZIP file.
 
 The `kogito` executable file appears.
 --
@@ -37,9 +37,9 @@ The `kogito` executable file appears.
 * On Linux: In a command terminal, run the following command:
 +
 .Move the `{PRODUCT_INIT}` file
-[source]
+[source,subs="+quotes"]
 ----
-cp /PATH_TO_KOGITO /usr/local/bin
+cp /__PATH_TO_KOGITO__ /usr/local/bin
 ----
 
 * On Windows: In your file browser, move the extracted directory to the new location.
@@ -48,10 +48,10 @@ cp /PATH_TO_KOGITO /usr/local/bin
 +
 --
 .Example {PRODUCT} service deployment from existing namespace
-[source,subs="attributes+"]
+[source,subs="attributes+,+quotes"]
 ----
 # Uses the provisioned namespace in your OpenShift cluster
-$ kogito use-project PROJECT_NAME
+$ kogito use-project __PROJECT_NAME__
 
 # Deploys a new {PRODUCT} service from source
 $ kogito deploy-service example-quarkus https://github.com/kiegroup/kogito-examples --context-dir jbpm-quarkus-example
@@ -62,10 +62,10 @@ NOTE: The first time that you use the {PRODUCT} CLI to interact with a project o
 Alternatively, you can generate a new namespace in your cluster during deployment:
 
 .Example {PRODUCT} service deployment from new namespace
-[source,subs="attributes+"]
+[source,subs="attributes+,+quotes"]
 ----
 # Creates a new namespace in your cluster
-$ kogito new-project NEW_PROJECT_NAME
+$ kogito new-project __NEW_PROJECT_NAME__
 
 # Deploys a new {PRODUCT} service from source
 $ kogito deploy-service example-quarkus https://github.com/kiegroup/kogito-examples --context-dir jbpm-quarkus-example
@@ -74,8 +74,8 @@ $ kogito deploy-service example-quarkus https://github.com/kiegroup/kogito-examp
 You can also use the following abbreviated syntax for service deployment:
 
 .Abbreviated command for {PRODUCT} service deployment
-[source]
+[source,subs="attributes+,+quotes"]
 ----
-$ kogito deploy-service example-quarkus https://github.com/kiegroup/kogito-examples --context-dir jbpm-quarkus-example --project PROJECT_NAME
+$ kogito deploy-service example-quarkus https://github.com/kiegroup/kogito-examples --context-dir jbpm-quarkus-example --project __PROJECT_NAME__
 ----
 --
