@@ -16,10 +16,10 @@ endif::[]
 
 .Procedure
 . Download the latest version of the https://github.com/kiegroup/kogito-cloud-operator/releases[{PRODUCT} CLI distribution] from GitHub.
-. Extract the `{PRODUCT_INIT}-_RELEASE_` binary file:
+. Extract the `{PRODUCT_INIT}-_RELEASE_` binary file that is specific to your operating system:
 +
 --
-* On Linux: In a command terminal, navigate to the directory where you downloaded the `{PRODUCT_INIT}-_RELEASE_` binary file and run the following command to extract the contents:
+* On Linux or Mac: In a command terminal, navigate to the directory where you downloaded the `{PRODUCT_INIT}-_RELEASE_` binary file and run the following command to extract the contents:
 +
 .Extract the {PRODUCT} CLI distribution
 [source,subs="+quotes"]
@@ -34,7 +34,7 @@ The `kogito` executable file appears.
 . Move the extracted `{PRODUCT_INIT}` file to an existing directory in your `PATH` variable, such as `/usr/local/bin`:
 +
 --
-* On Linux: In a command terminal, run the following command:
+* On Linux or Mac: In a command terminal, run the following command:
 +
 .Move the `{PRODUCT_INIT}` file
 [source,subs="+quotes"]
