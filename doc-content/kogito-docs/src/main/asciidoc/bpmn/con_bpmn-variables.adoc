@@ -16,9 +16,13 @@ If the variable cannot be found, a read access request returns `null`, a write a
 
 == Variable tags in BPMN process files
 
-For greater control over variable behavior, you can tag process variables and local variables in the BPMN process file.
+For greater control over variable behavior, you can tag process variables and local variables in the BPMN process file. Tags are simple string values that you add as metadata to a specific variable.
 
-{PRODUCT} supports the following tags for process variables or local variables. You can use multiple tags for a variable where applicable.
+You can use multiple tags for a variable where applicable, but use caution and ensure that the multiple tags are logical and do not conflict. For example, avoid tagging a variable as both `internal` and `required`.
+
+If a process variable has no tag assigned to it, {PRODUCT} considers the variable as a possible `input` and `output` variable.
+
+{PRODUCT} supports the following tags for process variables or local variables.
 
 * `internal`: Sets the variable as internal only for a process instance and hides the variable from the displayed BPMN model
 * `required`: Sets the variable as a requirement in order to start a process instance
@@ -43,3 +47,8 @@ The following snippet from a BPMN file applies the `required` tag to an `approve
   </bpmn2:extensionElements>
 </bpmn2:property>
 ----
+
+////
+//@comment: Waiting on https://issues.redhat.com/browse/KOGITO-1037 to be merged, then this becomes true. (Stetson, 24 March 2020)
+You can also define custom variable tags in your BPMN files to make variable data available to the {PRODUCT} Data Index Service. Custom tags do not influence the {PRODUCT} runtime as the standard variable tags do and are for data purposes only.
+//// 
