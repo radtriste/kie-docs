@@ -33,7 +33,7 @@ ifdef::KOGITO-COMM[]
 endif::[]
 * *Knative* enables you to build serverless applications with {PRODUCT} that you can scale up or down (to zero) as needed.
 * *Prometheus* and *Grafana* are compatible with {PRODUCT} services for monitoring and analytics with optional extensions.
-* *Kafka*, *Infinispan*, and *Keycloak* are also some of the middleware technologies that {PRODUCT} supports.
+* *Kafka*, *Infinispan*, and *Keycloak* are also some of the middleware technologies that {PRODUCT} supports for messaging, persistence, and security.
 
 == Domain-specific flexibility
 

@@ -49,7 +49,7 @@ This example procedure uses curl commands for convenience.
 .Procedure
 In a command terminal window that is separate from your running application, navigate to the project that contains your {PRODUCT} service and use any of the following curl commands with JSON requests to interact with your running service:
 
-NOTE: On Spring Boot, you might need to modify how your application exposes API endpoints in order for these example requests to function. For more information, see the README file included in the example Spring Boot project that you created for this tutorial.
+NOTE: On Spring Boot, you might need to modify how your application exposes API endpoints in order for these example requests to function. For more information, see the `README` file included in the example Spring Boot project that you created for this tutorial.
 
 * Add an adult person:
 +
