@@ -2,7 +2,7 @@
 
 = Designing the application logic for a {PRODUCT} service using DMN and BPMN
 
-After you create your {PRODUCT} project, you can create or import Business Process Model and Notation (BPMN) 2.0 business processes, Decision Model and Notation (DMN) decision models, Drools Rule Language (DRL) business rules, XLS or XLSX decision tables, Java services, and other assets in the `src/main/resources` folder of your project.
+After you create your {PRODUCT} project, you can create or import Business Process Model and Notation (BPMN) 2.0 business processes, Decision Model and Notation (DMN) decision models, Drools Rule Language (DRL) business rules, XLS or XLSX decision tables, and other assets in the `src/main/resources` folder of your project.
 
 The example for this procedure is a basic {PRODUCT} service that provides a REST endpoint `/persons`. This endpoint is automatically generated based on an example `PersonProcess.bpmn2` business process that employs an example `PersonDecisions.dmn` DMN model to make decisions based on the data being processed.
 
@@ -171,7 +171,7 @@ To create this example DMN model quickly, you can copy the following `PersonDeci
 To create this example DMN model in VSCode using the {PRODUCT} DMN designer, follow these steps:
 
 .. In the left palette, select *DMN Input Data*, drag the node to the canvas, and double-click the node to name it `Person`.
-.. In the left palette, select *DMN decision*, drag the node to the canvas, double-click the node to name it `Is Adult`, and link to it from the input node.
+.. In the left palette, select *DMN Decision*, drag the node to the canvas, double-click the node to name it `Is Adult`, and link to it from the input node.
 .. Select the decision node to display the node options and click the *Edit* icon to open the DMN boxed expression designer to define the decision logic for the node.
 .. Click the undefined expression field and select *Decision Table*.
 .. Click the upper-left corner of the decision table to set the hit policy to *Unique*.
