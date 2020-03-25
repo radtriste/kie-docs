@@ -4,7 +4,7 @@
 
 After you set up the required infrastructures for your travel agency applications, you can create the travel agency services and provision the OpenShift resources required for deployment with the binary build used in this example. You can create the services using the OpenShift web console or using the {PRODUCT} CLI.
 
-This example uses the {PRODUCT} CLI to start the services and the {PRODUCT} Operator UI in the web console to verify that the services are running.
+This example uses the {PRODUCT} CLI to start the services and the *{PRODUCT} Operator* page in the web console to verify that the services are running.
 
 The travel agency example application includes the following key OpenShift resources:
 
