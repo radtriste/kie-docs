@@ -11,7 +11,7 @@ ifdef::KOGITO-COMM[]
 endif::[]
 
 .Procedure
-In a command terminal, navigate to the project that contains your {PRODUCT} service and run one of the following commands, depending on your preferred run mode and application environment:
+In a command terminal, navigate to the project that contains your {PRODUCT} service and enter one of the following commands, depending on your preferred run mode and application environment:
 
 * For development mode:
 +
