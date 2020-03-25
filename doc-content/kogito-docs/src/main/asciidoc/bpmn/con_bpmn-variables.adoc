@@ -20,17 +20,17 @@ For greater control over variable behavior, you can tag process variables and lo
 
 You can use multiple tags for a variable where applicable, but use caution and ensure that the multiple tags are logical and do not conflict. For example, avoid tagging a variable as both `internal` and `required`.
 
-If a process variable has no tag assigned to it, {PRODUCT} considers the variable as a possible `input` and `output` variable.
+By default, if a process variable has no tag assigned to it, {PRODUCT} assigns an `input` and an `output` tag to it.
 
 {PRODUCT} supports the following tags for process variables or local variables.
 
-* `internal`: Sets the variable as internal only for a process instance and hides the variable from the displayed BPMN model
-* `required`: Sets the variable as a requirement in order to start a process instance
-* `readonly`: Sets the variable for descriptive purpose only and can be set only once
-* `input`: Sets the variable as an input of the process and therefore is not exposed in the returned data model
-* `output`: Sets the variable as an output of the process and therefore not expected for process start and included in the returned data model
-* `business-relevant`: Indicates that the variable is relevant for a particular item of business value
-* `tracked`: Sets a variable to be tracked for changes
+* `internal`: Sets the variable as internal only for a process instance and hides the variable from the exposed REST model. For example, you can use this tag with intermediate variables that help hold some state during the execution of the process but are not part of the domain.
+* `required`: Sets the variable as a requirement in order to start a process instance. If a process instance starts without the required variable, {PRODUCT} generates a `VariableViolationException` error.
+* `readonly`: Sets the variable for descriptive purpose only and can be set only once during process instance execution. If the value of a read-only variable is modified at any time, {PRODUCT} generates a `VariableViolationException` error.
+* `input`: Sets the variable as an input of the process and therefore is not exposed in the returned data model. As a result, the value of an input variable is not returned in response to REST requests.
+* `output`: Sets the variable as an output of the process and therefore is not expected for a process start and is included in the returned data model. As a result, the value of an output variable is returned in response to REST requests.
+* `business-relevant`: Indicates that the variable is relevant for a particular item of business value. This tag is helpful for monitoring purposes or for implying that the given variable is relevant to another application.
+* `tracked`: Sets a variable to be tracked for changes so that {PRODUCT} generates events any time the value of this variable is changed. Events are published to the `kogito-variables-events` topic in {PRODUCT}, where you can access the previous and new value.
 
 You define a variable tag directly in the BPMN process file as a `customTags` metadata property with the tag value defined in the format `![CDATA[__TAG_NAME__]]`.
 
@@ -48,7 +48,4 @@ The following snippet from a BPMN file applies the `required` tag to an `approve
 </bpmn2:property>
 ----
 
-////
-//@comment: Waiting on https://issues.redhat.com/browse/KOGITO-1037 to be merged, then this becomes true. (Stetson, 24 March 2020)
-You can also define custom variable tags in your BPMN files to make variable data available to the {PRODUCT} Data Index Service. Custom tags do not influence the {PRODUCT} runtime as the standard variable tags do and are for data purposes only.
-//// 
+You can also define custom variable tags in your BPMN files to make variable data available to {PRODUCT} process event listeners. Custom tags do not influence the {PRODUCT} runtime as the standard variable tags do and are for data purposes only.
