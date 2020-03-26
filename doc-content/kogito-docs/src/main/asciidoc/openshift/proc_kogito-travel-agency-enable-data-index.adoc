@@ -42,5 +42,5 @@ image::kogito/openshift/kogito-ocp-data-index-route.png[Image of Data Index rout
 You can click the *Location* URL to view the {PRODUCT} Data Index Service GraphQL interface (GraphiQL) and enter GraphQL queries for stored data.
 
 .Example GraphQL query in GraphiQL interface for Data Index Service
-image::kogito/openshift/kogito-ocp-data-index-graphql.png[Image of Data Index GraphiQL interface]
+image::kogito/openshift/kogito-ocp-data-index-graphql2.png[Image of Data Index GraphiQL interface]
 --

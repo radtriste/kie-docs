@@ -41,7 +41,9 @@ If you have an internal Maven repository, you can use it as a Maven mirror servi
 
 [source,yaml]
 ----
-mavenMirrorURL: http://nexus3-nexus.apps-crc.testing/repository/maven-public/
+spec:
+  build:
+    mavenMirrorURL: http://nexus3-nexus.apps-crc.testing/repository/maven-public/
 ----
 ====
 --
@@ -57,6 +59,9 @@ You can select the application name to view or modify application settings and Y
 
 .View {PRODUCT} service details
 image::kogito/openshift/kogito-ocp-app-details.png[Image of Kogito service details page in web console]
+
+NOTE: The application details page displays available deployments only after the application is built and deployed successfully, as shown in this example.
+
 --
 . In the left menu of the web console, go to *Builds* -> *Builds* to view the status of your application build.
 +

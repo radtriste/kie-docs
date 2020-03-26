@@ -24,7 +24,7 @@ $ cd 06-kogito-travel-agency
 $ mvn clean package
 ----
 
-This command builds the project in standard JDK mode to package the application as a runner JAR file and include any dependencies in a `libs` folder.
+This command builds the project in standard JDK mode to package the application as a runner JAR file and include any dependencies in a `lib` folder.
 
 ifdef::KOGITO-COMM[]
 NOTE: Alternatively, you can also build the project in native mode (requires GraalVM and SubstrateVM) to build and compile the application into a native executable for your system.
