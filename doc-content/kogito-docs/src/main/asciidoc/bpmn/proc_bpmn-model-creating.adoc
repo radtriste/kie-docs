@@ -21,7 +21,7 @@ endif::[]
 .Procedure
 . In your VSCode IDE, create or import a BPMN file in the relevant folder of your {PRODUCT} project, typically in `src/main/resources`.
 +
-NOTE: For a new BPMN file, you can also enter `bpmn.new` in a Google Chrome browser to design your business process in the {PRODUCT} online BPMN designer. When you finish creating your process, you can click *Download* in the online designer page to import your BPMN file into your {PRODUCT} project.
+NOTE: For a new BPMN file, you can also enter `bpmn.new` in a web browser to design your business process in the {PRODUCT} online BPMN designer. When you finish creating your process, you can click *Download* in the online designer page to import your BPMN file into your {PRODUCT} project.
 
 . Open the new or imported BPMN file to view the process diagram in the {PRODUCT} BPMN designer.
 +
@@ -145,23 +145,23 @@ This example assumes that you have the following assets in your {PRODUCT} projec
 --
 The following is the BPMN model for applicant age evaluation in this example:
 
-.Example `Person` BPMN process
-image::kogito/creating-running/kogito-bpmn-example-person.png[Image of person process diagram]
+.Example `person.bpmn2` BPMN process
+image::kogito/creating-running/kogito-bpmn-example-person.png[Image of `person.bpmn2` process diagram]
 
 You can continue adding or modifying any remaining components and properties of your BPMN process or create a separate example.
 
-The following are additional BPMN models that are used with the `Person` process as part of the same example application:
+The following are additional BPMN models that are used with the `persons.bpmn2` process as part of the same example application:
 
-.Example `Orders.bpmn2` process
-image::kogito/bpmn/bpmn-model-example-orders.png[Image of `Orders.bpmn` example process]
+.Example `orders.bpmn2` process
+image::kogito/bpmn/bpmn-model-example-orders.png[Image of `orders.bpmn2` example process]
 
-.Example `OrderItems.bpmn2` process invoked as a subprocess
-image::kogito/bpmn/bpmn-model-example-order-items.png[Image of `OrderItems.bpmn` example process]
+.Example `orderItems.bpmn2` process invoked as a subprocess
+image::kogito/bpmn/bpmn-model-example-order-items.png[Image of `orderItems.bpmn` example process]
 
 As an illustration of a more complex use case, the following is an example BPMN model from a separate mortgage loan application for determining loan approval:
 
 .Example business process for a mortgage loan application
 image::kogito/bpmn/bpmn-model-example-mortgage-application.png[Image of mortgage application business process.]
 
-For more {PRODUCT} examples and instructions for using them, see the https://github.com/kiegroup/kogito-examples[kogito-examples] page in GitHub.
+For more {PRODUCT} examples and instructions for using them, see the https://github.com/kiegroup/kogito-examples[kogito-examples] repository in GitHub.
 --

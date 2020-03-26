@@ -15,8 +15,6 @@ a|image:kogito/bpmn/grn_check.png[] | Supported by {PRODUCT} runtime
 a|image:kogito/bpmn/bk_x.png[] | Not supported by {PRODUCT} runtime
 |===
 
-*<@Cristiano, in the following table, see Tasks > Custom (work item). We say in the runtimes wiki that Kogito supports it so I've included it, but I don't find any more details about how to actually configure customer tasks / work items and handlers, etc. to use them. In BA 7.x, we have a https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.7/html-single/custom_tasks_and_work_item_handlers_in_business_central/index[Custom tasks and work item handlers] doc that addresses that. What is the equivalent for Kogito in order to use custom tasks in processes?>*
-
 .BPMN2 components
 [cols="25%,25%,30%,20%" options="header"]
 |===
@@ -77,12 +75,10 @@ a|image:kogito/bpmn/bk_x.png[] | Not supported by {PRODUCT} runtime
                     |Cancel            |image:kogito/bpmn/bk_x.png[]
                     |Compensation      |image:kogito/bpmn/bk_x.png[]
                     |Multiple          |image:kogito/bpmn/bk_x.png[]
-2.8+|Tasks    |Business rule    |image:kogito/bpmn/grn_check.png[]
+2.7+|Tasks    |Business rule    |image:kogito/bpmn/grn_check.png[]
               |Script           |image:kogito/bpmn/grn_check.png[]
               |User             |image:kogito/bpmn/grn_check.png[]
               |Service          |image:kogito/bpmn/grn_check.png[]
-              a|Custom
-              (work item)       |image:kogito/bpmn/grn_check.png[]
               |Send             |image:kogito/bpmn/bk_x.png[]
               |Receive          |image:kogito/bpmn/bk_x.png[]
               |Receive          |image:kogito/bpmn/bk_x.png[]

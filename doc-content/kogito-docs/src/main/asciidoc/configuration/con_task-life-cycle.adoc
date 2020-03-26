@@ -117,3 +117,23 @@ When you interact with user tasks through a REST API, you can also provide the f
 |Zero or more group names to be used for the user task authorization check
 |Yes
 |===
+
+The following REST endpoint example sets a task phase, group, and user in an `orderItems.bpmn2` process for verifying customer orders:
+
+.Example POST endpoint to set a task phase, group, and user
+[source,subs="+quotes"]
+----
+http://localhost:8080/orderItems/__PROCESS_ID__/Verify_order/__WORK_ITEM_ID__?phase=__PHASE_NAME__&group=__GROUP_NAMES__&user=__USER_NAME__
+----
+
+.Example curl command to claim a task for a specified group and user
+[source]
+----
+curl -X POST "http://localhost:8080/orderItems/demo.orderItems/Verify_order/UserTask_1?phase=claim&group=managers&user=john" -H "accept: application/json" -H "content-type: application/json"
+----
+
+.Example curl command to complete a task for a specified group and user
+[source]
+----
+curl -X POST "http://localhost:8080/orderItems/demo.orderItems/Verify_order/UserTask_1?phase=complete&group=managers&user=john" -H "accept: application/json" -H "content-type: application/json"
+----

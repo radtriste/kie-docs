@@ -5,7 +5,7 @@
 You can enable persistence in your {PRODUCT} services to persist data, such as active process nodes and process instance variables, so that the data is preserved across application restarts. {PRODUCT} persistence is based on https://infinispan.org/[Infinispan], so you must have a an Infinispan server installed and running in order to enable persistence.
 
 .Prerequisites
-* https://infinispan.org/[Infinispan] server is installed and running. For information about Infinispan installation and configuration, see the https://infinispan.org/documentation/[Infinispan documentation].
+* https://infinispan.org/[Infinispan server] 10.0 or later is installed and running. For information about Infinispan installation and configuration, see the https://infinispan.org/documentation/[Infinispan documentation].
 
 .Procedure
 . Add the following dependencies to the `pom.xml` file of your {PRODUCT} project:
@@ -31,7 +31,7 @@ You can enable persistence in your {PRODUCT} services to persist data, such as a
 <dependency>
   <groupId>org.kie.kogito</groupId>
   <artifactId>infinispan-persistence-addon</artifactId>
-  <version></version>
+  <version>${{PRODUCT_INIT}.version}</version>
 </dependency>
 <dependency>
   <groupId>org.infinispan</groupId>
@@ -60,5 +60,5 @@ infinispan.remote.server-list=127.0.0.1:11222
 
 For example {PRODUCT} services with Infinispan persistence, see the following example applications in GitHub:
 
-* https://github.com/kiegroup/kogito-examples/tree/master/kogito-infinispan-persistence-quarkus[`kogito-infinispan-persistence-quarkus`]: Example on Quarkus
-* https://github.com/kiegroup/kogito-examples/tree/master/kogito-infinispan-persistence-springboot[`kogito-infinispan-persistence-springboot`]: Example on Spring Boot
+* https://github.com/kiegroup/kogito-examples/tree/stable/kogito-infinispan-persistence-quarkus[`kogito-infinispan-persistence-quarkus`]: Example on Quarkus
+* https://github.com/kiegroup/kogito-examples/tree/stable/kogito-infinispan-persistence-springboot[`kogito-infinispan-persistence-springboot`]: Example on Spring Boot

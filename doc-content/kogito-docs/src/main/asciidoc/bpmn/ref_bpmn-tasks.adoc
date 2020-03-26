@@ -5,8 +5,6 @@ BPMN tasks identify actions that are completed in a business process model and a
 
 {PRODUCT} currently supports the following tasks:
 
-*<@Cristiano, I assume we should include "Custom task (work item)" in this section, but I don't now how to address it, what it requires.>*
-
 .Supported tasks
 [cols="40%,60%", options="header"]
 |===
@@ -26,8 +24,8 @@ BPMN tasks identify actions that are completed in a business process model and a
 | image:kogito/bpmn/bpmn-service-task.png[]
 |===
 
-*<@Cristiano, how should the following about custom tasks / work items be updated, or removed?>*
-
+////
+//@comment: Currently unavailable in VSCode. (Stetson, 26 Mar 2020)
 In addition, the BPMN2 specification provides the ability to create custom tasks. The following predefined custom tasks are included with {PRODUCT}:
 
 * Rest service tasks: Used to invoke a remote RESTful service
@@ -36,7 +34,7 @@ In addition, the BPMN2 specification provides the ability to create custom tasks
 * Java service tasks: Used to call Java code
 * WebService service tasks: Used to invoke a remote WebService call
 * DecisionTask tasks: Used to execute a DMN diagram
-
+////
 
 .Business rule task
 A business rule task specifies a business decision to be executed either through a Decision Model and Notation (DMN) model or a Drools Rule Language (DRL) rule unit.

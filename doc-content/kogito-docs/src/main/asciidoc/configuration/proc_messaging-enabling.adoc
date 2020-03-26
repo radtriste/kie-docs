@@ -20,7 +20,7 @@ image::kogito/bpmn/bpmn-messaging-start-event.png[Image of message start event d
 .Example message configuration for end event
 image::kogito/bpmn/bpmn-messaging-end-event.png[Image of message end event data]
 
-{PRODUCT} messaging is based on https://kafka.apache.org/[Apache Kafka], so you must have Kafka installed in order to enable messaging. Your marshalling configuration depends on the messaging solution you use.
+For this procedure, the messaging is based on https://kafka.apache.org/[Apache Kafka], so you must have Kafka installed in order to enable messaging. Your marshalling configuration depends on the messaging solution you use.
 
 .Prerequisites
 * https://kafka.apache.org/[Apache Kafka] is installed and includes any required topics. For information about Kafka installation and configuration, see the https://kafka.apache.org/documentation/[Apache Kafka documentation].
@@ -149,5 +149,5 @@ public class KafkaProducerConfig {
 
 For example {PRODUCT} services with Kafka messaging, see the following example applications in GitHub:
 
-* https://github.com/kiegroup/kogito-examples/tree/master/kogito-kafka-quickstart-quarkus[`kogito-kafka-quickstart-quarkus`]: Example on Quarkus
-* https://github.com/kiegroup/kogito-examples/tree/master/kogito-kafka-quickstart-quarkus[`kogito-kafka-quickstart-springboot`]: Example on Spring Boot
+* https://github.com/kiegroup/kogito-examples/tree/stable/kogito-kafka-quickstart-quarkus[`kogito-kafka-quickstart-quarkus`]: Example on Quarkus
+* https://github.com/kiegroup/kogito-examples/tree/stable/kogito-kafka-quickstart-quarkus[`kogito-kafka-quickstart-springboot`]: Example on Spring Boot
